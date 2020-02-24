@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <thead>
+  <tr>
+      <td>Member Index</td>
+      <td>Member ID</td>
+      <td>Member Name</td>
+      <td>Member Bio</td>
+      <td>Member Age</td>
+      <td colspan="2">Actions</td>
+  </tr>
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let member of members; let i = index">
+          <td>{{ member.MemberName }}</td>
+          <td>{{ member.MemberBio }}</td>
+          <td>{{ member.MemberAge }}</td>
+          <td><a [routerLink]="['/edit', member._id]" class="btn btn-primary">Edit</a></td>
+         <td><a (click) = "deleteMember(member._id, i)" class="btn btn-danger">Delete</a>
+      </tr>
+  </tbody>
+</table>
